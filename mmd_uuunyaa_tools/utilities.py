@@ -66,12 +66,12 @@ def sanitize_path_fragment(path_fragment: str) -> str:
 
 
 def is_mmd_tools_installed() -> bool:
-    return importlib.find_loader('mmd_tools')  # pylint: disable=deprecated-method
+    return importlib.find_loader('bl_ext.blender_org.mmd_tools')  # pylint: disable=deprecated-method
 
 
 def import_mmd_tools():
     try:
-        return importlib.import_module('mmd_tools')
+        return importlib.import_module('bl_ext.blender_org.mmd_tools')
     except ImportError as exception:
         raise RuntimeError(_("MMD Tools is not installed correctly. Please install MMD Tools using the correct steps, as UuuNyaa Tools depends on MMD Tools.")) from exception
 
